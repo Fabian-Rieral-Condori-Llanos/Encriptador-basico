@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #F3F5FC;
+    font-family: 'Roboto', sans-serif;
+}
+.contenedor{
+    width: 90%;
+    height: auto;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,auto);
+    grid-template-areas: "header header header"
+                          "izquierda izquierda derecha"
+                          "boton1 boton2 derecha";
+    grid-template-rows: minmax(40px,auto) 90%;
+}
+.contenedor>div,
+.contenedor >input{
+    padding: 10px;
+    border-radius: 5%;
+}
+.contenedor .header{
+    grid-area: header; 
+    display: flex; 
+    flex-direction: row;
+    align-items: flex-start;
+}
+.header .imgTitulo{ 
+    height: 40px;
+    width: 30px;
+    
+}
+.header .titulo{
+    width: 50%;
+    font-size: 250%;
+    font-family: bold;
+    margin-left: 20px;
+}
+
+.contenedor .izquierda{
+    grid-area: izquierda;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    height: 95%;
+    width: 95%;
+}
+.izquierda .mensaje{
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 85%;
+    height: 85%;
+    font-size: 22px;
+    color: #0A3871;
+    border: none;
+    outline: none;
+    overflow: auto;
+    background: #F3F5FC;
+ 
+}
+.izquierda .restriciones{
+    margin-left: 10%;
+    margin-top: 1%;
+    font-size: bold;
+}
+
+.contenedor .derecha{
+    grid-area: derecha;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+.derecha #aviso{
+    height: 700px;
+}
+.derecha #menuResultado{
+    display: none;
+    height: 700px;
+}
+
+.derecha #imgDerecha{
+    width: 80%;
+    height: 30%;
+    margin-top: 75%;
+ }
+ .derecha #texto{
+    margin-top: 4%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 25px;
+    height: 10%; 
+ }
+ 
+ .derecha #resultado{
+    font-size: 25px;
+    font-style: normal;
+    color: #0A3871;
+    height: 90%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 20%;
+    margin-top: 5%;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    outline: transparent;
+   
+ }
+ .derecha #copiar{
+    margin-top: 15%;
+    width: 80%;
+    height: 65px;
+    border-radius: 24px;
+    font-size: 28px;
+    font-weight: 550;
+}
+#menuResultado >button:hover{
+    background: #0A3871;
+}
+.derecha .textomsj{
+    font-size: 22px;
+    margin-top: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.contenedor .boton1,
+.contenedor .boton2{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.contenedor .boton1{
+    grid-area: boton1;
+
+}
+.contenedor .boton2{
+    grid-area: boton2;
+
+}
+.boton1 .encriptar{
+    width: 80%;
+    height: 65px;
+    border-radius: 24px;
+    font-size: 24px;
+}
+.boton2 .desencriptar{
+    width: 80%;
+    height: 65px;
+    border-radius: 24px;
+    font-size: 24px;
+}
+.boton1 >button:hover{
+    background: #48af03;
+}
+.boton2 >button:hover{
+    background: #03af92;
+}
+@media (min-width:781px) and (max-width: 1000px) {
+    .header .titulo{
+        width: 60%;
+        font-size: 35px;
+        font-family: bold;
+        margin-left: 20px;
+    }
+ }
+
+@media screen and (max-width: 780px) {
+   .contenedor{
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,auto); 
+    grid-template-areas:   "header header "
+                            "izquierda izquierda"
+                            "boton1 boton2"
+                            "derecha derecha";
+   }
+}
+
+@media (min-width:260px) and (max-width: 560px) {
+    .contenedor{
+    width: 95%;
+    margin: 10px 10px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(1,1fr);
+     grid-template-rows: repeat(5,auto);
+     grid-template-areas:   "header"
+                             "izquierda"
+                             "boton1"
+                             "boton2"
+                             "derecha";
+    }   
+    .derecha #resultado{
+        height: 78%;
+     }
+    .contenedor .boton1,
+    .contenedor .boton2{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .boton1 .encriptar{
+        width: 100%;
+        font-size: 35px;
+    }
+    .boton2 .desencriptar{
+        width: 100%;
+        font-size: 35px;
+    }
+    .izquierda .mensaje{
+        font-size: 25px;
+    }
+    .derecha #resultado{
+        font-size: 25px;
+     }
+ }
